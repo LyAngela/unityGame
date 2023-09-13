@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,10 +8,18 @@ public class Avatar : MonoBehaviour
     [SerializeField] private float _speed = 8f;
     [SerializeField] private float _rotationSpeed = 90f; // Rotation speed in degrees per second
 
+    private Rigidbody _rigidbody;
+
+    private void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+
     private void OnMove(InputValue inputValue)
     {
         _direction = inputValue.Get<Vector2>();
     }
+    
 
     private void FixedUpdate()
     {
@@ -19,9 +28,10 @@ public class Avatar : MonoBehaviour
 
         // Move the avatar
         transform.Translate(movement);
-
+        
         // Rotate the avatar
         float rotationAmount = _direction.x * _rotationSpeed * Time.fixedDeltaTime;
         transform.Rotate(Vector3.up, rotationAmount);
+      
     }
 }
