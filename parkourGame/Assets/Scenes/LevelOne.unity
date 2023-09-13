@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 492076428}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -654,7 +654,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492076426}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 485cbc4b609e140c1ae88d649cbd09a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -981,6 +981,7 @@ GameObject:
   - component: {fileID: 1079035270}
   - component: {fileID: 1079035269}
   - component: {fileID: 1079035268}
+  - component: {fileID: 1079035271}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1056,12 +1057,25 @@ Transform:
   m_GameObject: {fileID: 1079035267}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6866035, y: 3.1506042, z: -10.714676}
+  m_LocalPosition: {x: 0.30339646, y: 8.430605, z: -6.9946756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1805773278}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1079035271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079035267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9c4f18fc63641a9b8bd7142ed22697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothTime: 1.5
 --- !u!1001 &1119054582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1783,11 +1797,10 @@ Transform:
   m_GameObject: {fileID: 1805773277}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.99, y: 5.28, z: 3.72}
+  m_LocalPosition: {x: 3.99, y: 3.61, z: 3.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1079035270}
   - {fileID: 1776374340}
   - {fileID: 368661024}
   m_Father: {fileID: 0}
@@ -2028,3 +2041,4 @@ SceneRoots:
   - {fileID: 1955024873}
   - {fileID: 395610000}
   - {fileID: 1805773278}
+  - {fileID: 1079035270}
