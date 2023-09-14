@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6539887203678169779}
   - component: {fileID: 2922811666522904224}
   - component: {fileID: 5817315008419065915}
+  - component: {fileID: 3623256933150140711}
   m_Layer: 0
   m_Name: SphereGemSmall
   m_TagString: Untagged
@@ -171,3 +172,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3623256933150140711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6521024176517214358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ab8e9facb204b17a11fb3fc6176ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointSound: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}

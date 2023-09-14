@@ -11,21 +11,20 @@ public class Avatar : MonoBehaviour
     private Rigidbody _rigidbody;
     private bool _toJump = false;
     private PhysicMaterial _bounciness;
-    private bool _isHighJumping = false;
+    public bool IsHighJumping { get; set; }
 
-    private bool _onFloor;
-
-    public bool GetOnFloor()
-    {
-        return _onFloor;
-    }
+    public bool OnFloor { get; set; }
     
+    
+
     
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _bounciness = GetComponent<Collider>().material;
+        IsHighJumping = false;
+        
     }
 
     private void OnMove(InputValue inputValue)
@@ -41,8 +40,9 @@ public class Avatar : MonoBehaviour
         
         if (other.collider.CompareTag("Floor")) {
             _bounciness.bounceCombine = PhysicMaterialCombine.Maximum;
-            _isHighJumping = false;
-            _onFloor = true;
+            IsHighJumping = false;
+            OnFloor = true;
+            
         }
         
     }
@@ -54,18 +54,18 @@ public class Avatar : MonoBehaviour
         if (_toJump)
         {
             _rigidbody.AddForce(Vector3.up * 10f, ForceMode.Impulse);
-            _isHighJumping = true;
+            IsHighJumping = true;
             _toJump = false;
         }
 
-        if (_isHighJumping)
+        if (IsHighJumping)
         {
             _bounciness.bounceCombine = PhysicMaterialCombine.Average;
         }
 
-        if (transform.position.y > 0.5f)
+        if (transform.position.y > 0)
         {
-            _onFloor = false;
+            OnFloor = false;
         }
         
      

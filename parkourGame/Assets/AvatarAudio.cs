@@ -6,10 +6,18 @@ public class AvatarAudio : MonoBehaviour
 {
 
     [SerializeField] private AudioClip bounceSound;
-
+    [SerializeField] private AudioClip highBounceSound;
+    
     private AudioSource _bounceSource;
+    private AudioSource _highBounceSource;
 
     private Avatar _avatar;
+    
+    // Needed for consistent sound bouncing
+    private bool hasPlayedBounceSound = false;
+    private bool hasPlayedHighBounceSound = false;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +26,14 @@ public class AvatarAudio : MonoBehaviour
         _bounceSource.loop = false;
         _bounceSource.volume = 0.5f;
         _bounceSource.Play();
-        _bounceSource.Pause();
+        _bounceSource.Pause(); 
+        
+        _highBounceSource = gameObject.AddComponent<AudioSource>();
+        _highBounceSource.clip = highBounceSound;
+        _highBounceSource.loop = false;
+        _highBounceSource.volume = 0.5f;
+        _highBounceSource.Play();
+        _highBounceSource.Pause();
 
         _avatar = FindObjectOfType<Avatar>(true);
     }
@@ -26,13 +41,25 @@ public class AvatarAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_avatar.GetOnFloor())
+        if (_avatar.OnFloor && !hasPlayedBounceSound)
         {
             _bounceSource.Play();
+            hasPlayedBounceSound = true;
         }
-        else
+        else if (!_avatar.OnFloor)
         {
-            _bounceSource.UnPause();
+            hasPlayedBounceSound = false; // Reset the flag if not on the floor
+        }
+        
+        if (_avatar.IsHighJumping && !hasPlayedHighBounceSound)
+        {
+            _highBounceSource.Play();
+            hasPlayedHighBounceSound = true;
+        }
+        else if (!_avatar.IsHighJumping)
+        {
+            hasPlayedHighBounceSound = false; // Reset the flag if not high jumping
         }
     }
+    
 }
