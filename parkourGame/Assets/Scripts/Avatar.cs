@@ -12,6 +12,14 @@ public class Avatar : MonoBehaviour
     private bool _toJump = false;
     private PhysicMaterial _bounciness;
     private bool _isHighJumping = false;
+
+    private bool _onFloor;
+
+    public bool GetOnFloor()
+    {
+        return _onFloor;
+    }
+    
     
 
     private void Start()
@@ -34,9 +42,13 @@ public class Avatar : MonoBehaviour
         if (other.collider.CompareTag("Floor")) {
             _bounciness.bounceCombine = PhysicMaterialCombine.Maximum;
             _isHighJumping = false;
+            _onFloor = true;
         }
         
     }
+    
+    
+    
     private void FixedUpdate()
     {
         if (_toJump)
@@ -49,6 +61,11 @@ public class Avatar : MonoBehaviour
         if (_isHighJumping)
         {
             _bounciness.bounceCombine = PhysicMaterialCombine.Average;
+        }
+
+        if (transform.position.y > 0.5f)
+        {
+            _onFloor = false;
         }
         
      
