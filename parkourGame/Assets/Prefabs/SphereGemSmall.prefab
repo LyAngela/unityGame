@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dce4215b638c4d4b8c3349053e6b41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointSound: {fileID: 0}
 --- !u!65 &2922811666522904224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6521024176517214358}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9ab8e9facb204b17a11fb3fc6176ec8, type: 3}
   m_Name: 

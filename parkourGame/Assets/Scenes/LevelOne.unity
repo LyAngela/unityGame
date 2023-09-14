@@ -2122,6 +2122,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 735643452}
     m_Modifications:
+    - target: {fileID: 3623256933150140711, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.84000003
@@ -2174,6 +2178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SphereGemSmall
       objectReference: {fileID: 0}
+    - target: {fileID: 6539887203678169779, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
+      propertyPath: pointSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2899,7 +2907,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4000012107530088}
   - {fileID: 1079886580}
   - {fileID: 1829063801}
   - {fileID: 1238275762}
@@ -10974,11 +10981,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b74c48c2e73e17c418c9394124b75daf, type: 3}
   m_PrefabInstance: {fileID: 2145576264}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4000012107530088 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-  m_PrefabInstance: {fileID: 6668566528290449455}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4303832919563967882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11113,63 +11115,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce8d81c6aa7e94e17854e96cc16b761c, type: 3}
---- !u!1001 &6668566528290449455
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 735643452}
-    m_Modifications:
-    - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 22.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552538340411609901, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6521024176517214358, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
-      propertyPath: m_Name
-      value: SphereGemSmall
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
