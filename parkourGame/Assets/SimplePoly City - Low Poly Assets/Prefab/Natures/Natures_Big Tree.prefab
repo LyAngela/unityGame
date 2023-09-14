@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 7756797424516239469}
-  - component: {fileID: 3568493410232754357}
+  - component: {fileID: -3192354422233977024}
   m_Layer: 0
   m_Name: Natures_Big Tree
   m_TagString: Untagged
@@ -112,8 +112,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &3568493410232754357
-SphereCollider:
+--- !u!136 &-3192354422233977024
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,6 +130,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 3.0590577
+  serializedVersion: 2
+  m_Radius: 2.5746672
+  m_Height: 6.1181154
+  m_Direction: 1
   m_Center: {x: -0.13094223, y: 3.0589356, z: -0.028357744}

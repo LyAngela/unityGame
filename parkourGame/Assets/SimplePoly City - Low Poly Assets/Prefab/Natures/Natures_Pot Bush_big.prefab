@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 7503046552919476379}
-  - component: {fileID: -6842724599204967680}
+  - component: {fileID: 8838263008520643583}
   m_Layer: 0
   m_Name: Natures_Pot Bush_big
   m_TagString: Untagged
@@ -112,8 +112,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &-6842724599204967680
-SphereCollider:
+--- !u!136 &8838263008520643583
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,6 +130,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.65836704
+  serializedVersion: 2
+  m_Radius: 0.36413503
+  m_Height: 1.3167341
+  m_Direction: 1
   m_Center: {x: 0.000099122524, y: 0.6580993, z: -0.00009164214}

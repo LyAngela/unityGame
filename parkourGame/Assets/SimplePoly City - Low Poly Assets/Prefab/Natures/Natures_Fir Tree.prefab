@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: -6181193662328053753}
-  - component: {fileID: 6850206755119592693}
+  - component: {fileID: -7340594084970472556}
   m_Layer: 0
   m_Name: Natures_Fir Tree
   m_TagString: Untagged
@@ -112,8 +112,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &6850206755119592693
-SphereCollider:
+--- !u!136 &-7340594084970472556
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,6 +130,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 3.674337
+  serializedVersion: 2
+  m_Radius: 1.9576001
+  m_Height: 7.348674
+  m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 3.674377, z: -0.000000059604645}

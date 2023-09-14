@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: -195825091762169494}
-  - component: {fileID: -1492078026741104922}
+  - component: {fileID: 8164965326697741758}
   m_Layer: 0
   m_Name: Natures_Bush_01
   m_TagString: Untagged
@@ -112,8 +112,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &-1492078026741104922
-SphereCollider:
+--- !u!136 &8164965326697741758
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,6 +130,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.5356709
+  serializedVersion: 2
+  m_Radius: 0.6578319
+  m_Height: 3.0713418
+  m_Direction: 1
   m_Center: {x: 0.028981358, y: 1.5356709, z: -0.004864186}
