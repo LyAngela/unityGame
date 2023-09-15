@@ -8,7 +8,7 @@ public class Camera : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private Avatar _avatar;
     [SerializeField] private float smoothTime = 1.5F;
-    private readonly Vector3 _offset = new Vector3(0,8, -8);
+    private readonly Vector3 _offset = new Vector3(0,7, -10);
     private float _rotationSpeed;
 
 
