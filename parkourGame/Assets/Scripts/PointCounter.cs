@@ -8,7 +8,7 @@ public class PointCounter : MonoBehaviour
     private int _points = 0;
     private int _missingPoints;
     private GUIStyle _style = new GUIStyle();
-    private float _countDown = 10;
+    public float CountDown { get; set; }
     void Start()
     {
         useGUILayout = true;
@@ -22,24 +22,26 @@ public class PointCounter : MonoBehaviour
             point.PointEvent += (_, _) =>
             {
                 _points++;
-                _missingPoints--;
             };
+
+            CountDown = 150;
         }
-        
         
     
     }
 
     private void Update()
     {
-        _countDown = _countDown > 0 ? _countDown - Time.deltaTime : 0; 
+        CountDown = CountDown > 0 ? CountDown - Time.deltaTime : 0; 
+        
+        RenderSettings.fogDensity = CountDown == 0 ? 0.05f : Mathf.Lerp(0f, 0.05f, 1 - (CountDown / 150f));
     }
 
     private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(0,20, 300,300));
         GUILayout.Label($"Points: {_points}/{_missingPoints} ", _style);
-        GUILayout.Label($"Count Down: {(int)_countDown}",_style);
+        GUILayout.Label($"Count Down: {(int)CountDown}",_style);
         GUILayout.EndArea();
     }
     
