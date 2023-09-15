@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dce4215b638c4d4b8c3349053e6b41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointSound: {fileID: 0}
+  pointSound: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
 --- !u!65 &2922811666522904224
 BoxCollider:
   m_ObjectHideFlags: 0

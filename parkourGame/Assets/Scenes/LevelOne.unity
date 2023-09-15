@@ -9736,6 +9736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SphereGemSmall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6539887203678169779, guid: ba05a53a8ac48465abf9bc53e316b094, type: 3}
+      propertyPath: pointSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11072,7 +11076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2087058215621101019, guid: ce8d81c6aa7e94e17854e96cc16b761c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1
+      value: -2.04
       objectReference: {fileID: 0}
     - target: {fileID: 2087058215621101019, guid: ce8d81c6aa7e94e17854e96cc16b761c, type: 3}
       propertyPath: m_LocalPosition.z
