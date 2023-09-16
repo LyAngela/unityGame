@@ -51,7 +51,8 @@ public class Avatar : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (_toJump)
+        // only allowed to jump when hits floor (no double jumps)
+        if (_toJump && OnFloor)
         {
             _rigidbody.AddForce(Vector3.up * 10f, ForceMode.Impulse);
             IsHighJumping = true;

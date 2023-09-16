@@ -10,11 +10,11 @@ public class PowerUp : MonoBehaviour
 
     private AudioSource _powerUpSource;
 
-    private PointCounter _pointCounter;
+    private GameStatus _gameStatus;
 
     private void Start()
     {
-        _pointCounter = FindObjectOfType<PointCounter>();
+        _gameStatus = FindObjectOfType<GameStatus>();
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -26,7 +26,7 @@ public class PowerUp : MonoBehaviour
             _powerUpSource.volume = 0.5f;
             _powerUpSource.Play();
 
-            _pointCounter.CountDown += 20; 
+            _gameStatus.CountDown += 20; 
             
             Destroy(this.gameObject);
             

@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointCounter : MonoBehaviour
+public class GameStatus : MonoBehaviour
 {
     private int _points = 0;
     private int _missingPoints;
     private GUIStyle _style = new GUIStyle();
     public float CountDown { get; set; }
+
+    private bool countDownStart = false;
+    private Camera _camera;
     void Start()
     {
         useGUILayout = true;
@@ -26,15 +29,20 @@ public class PointCounter : MonoBehaviour
 
             CountDown = 150;
         }
+
+        _camera = FindObjectOfType<Camera>();
+        _camera.OnFlyOverAnimationStop += (_,_) => countDownStart = true;
         
-    
     }
 
     private void Update()
     {
-        CountDown = CountDown > 0 ? CountDown - Time.deltaTime : 0; 
+        if (countDownStart)
+        {
+            CountDown = CountDown > 0 ? CountDown - Time.deltaTime : 0; 
+            RenderSettings.fogDensity = CountDown == 0 ? 0.05f : Mathf.Lerp(0f, 0.05f, 1 - (CountDown / 150f)); 
+        }
         
-        RenderSettings.fogDensity = CountDown == 0 ? 0.05f : Mathf.Lerp(0f, 0.05f, 1 - (CountDown / 150f));
     }
 
     private void OnGUI()
