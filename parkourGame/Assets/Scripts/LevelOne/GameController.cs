@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 
     public const float AvailableTime = 200;
 
-    private CameraController _camera;
+    private CameraFollow _camera;
     private GameStatus _status;
 
     public int CollectedPoints { private set; get; }
@@ -16,13 +16,17 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        _camera = FindObjectOfType<CameraController>();
+        _camera = FindObjectOfType<CameraFollow>();
         _camera.OnFlyOverAnimationStop += (_, _) => UpdateStatus(GameStatus.Playing);
-
-        TotalPoints = transform.childCount;
+        
+        Point[] pointsList = FindObjectsOfType<Point>();
+        TotalPoints = pointsList.Length;
+        
         CountDown = AvailableTime;
 
         UpdateStatus(GameStatus.CameraFlyingOver);
+        
+        
     }
 
     private void Update()
@@ -50,17 +54,7 @@ public class GameController : MonoBehaviour
     {
         UpdateStatus(GameStatus.Playing);
     }
-
-    public void RecordCollision(CollisionableObjectType objectType)
-    {
-        switch (objectType)
-        {
-            case CollisionableObjectType.Obstacle: KillPlayer(); break;
-            case CollisionableObjectType.Point: AddPoint(); break;
-            case CollisionableObjectType.PowerUp: PowerUp(); break;
-        }
-    }
-
+    
     private void UpdateStatus(GameStatus status)
     {
         _status = status;
@@ -68,12 +62,12 @@ public class GameController : MonoBehaviour
         GameStatusChanged?.Invoke(this, _status);
     }
 
-    private void KillPlayer()
+    public void KillPlayer()
     {
         UpdateStatus(GameStatus.EndedLost);
     }
 
-    private void AddPoint()
+    public void AddPoint()
     {
         CollectedPoints++;
         if (CollectedPoints == TotalPoints)
@@ -82,7 +76,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void PowerUp()
+    public void PowerUp()
     {
         CountDown += 20;
     }

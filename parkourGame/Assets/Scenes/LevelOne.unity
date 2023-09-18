@@ -12025,7 +12025,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1079035267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb48b887d83cae74480baf702b7b2177, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c9c4f18fc63641a9b8bd7142ed22697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   smoothTime: 1.5
@@ -23993,6 +23993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891211924}
+  - component: {fileID: 1891211925}
   m_Layer: 0
   m_Name: Bad
   m_TagString: Untagged
@@ -24017,6 +24018,19 @@ Transform:
   - {fileID: 549869270}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1891211925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891211922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9767c65735411081bdd293700f0755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loseSound: {fileID: 8300000, guid: 866c03a4c91554ed2b1f663ea32e6f4f, type: 3}
 --- !u!1 &1896921079
 GameObject:
   m_ObjectHideFlags: 0

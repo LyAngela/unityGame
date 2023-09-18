@@ -15,6 +15,8 @@ public class Avatar : MonoBehaviour
 
     public bool IsHighJumping { get; set; }
     public bool OnFloor { get; set; }
+    
+    private bool _resetBounce = false;
 
     private void Start()
     {
@@ -37,40 +39,38 @@ public class Avatar : MonoBehaviour
     {
         if (_isPlaying)
         {
-            _toJump = true;
+            if (_toJump)
+            {
+                _rigidbody.AddForce(Vector3.up * 10f, ForceMode.Impulse);
+                IsHighJumping = true;
+                _toJump = false;
+            }
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("Floor"))
-        {
+        if (other.collider.CompareTag("Floor") || other.collider.CompareTag("Building")) {
             _bounciness.bounceCombine = PhysicMaterialCombine.Maximum;
             IsHighJumping = false;
             OnFloor = true;
+            _toJump = true;
+
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent(out CollisionableObject collisionableObject))
+        if (other.CompareTag("Point"))
         {
-            _gameController.RecordCollision(collisionableObject.ObjectType);
-            Destroy(collisionableObject.ObjectType == CollisionableObjectType.Obstacle ? gameObject : other.gameObject);
+            _resetBounce = true;
         }
     }
 
     private void FixedUpdate()
     {
-        // only allowed to jump when hits floor (no double jumps)
-        if (_toJump && OnFloor)
-        {
-            _rigidbody.AddForce(Vector3.up * 10f, ForceMode.Impulse);
-            IsHighJumping = true;
-            _toJump = false;
-        }
-
-        if (IsHighJumping)
+        
+        if (IsHighJumping || _resetBounce)
         {
             _bounciness.bounceCombine = PhysicMaterialCombine.Average;
         }
@@ -91,8 +91,8 @@ public class Avatar : MonoBehaviour
         transform.Rotate(Vector3.up, rotationAmount);
     }
 
-    private void OnGameStatusChanged(object _, GameStatus status)
+    private void OnGameStatusChanged(object _, GameStatus statusEnum)
     {
-        _isPlaying = status == GameStatus.Playing;
+        _isPlaying = statusEnum == GameStatus.Playing;
     }
 }
