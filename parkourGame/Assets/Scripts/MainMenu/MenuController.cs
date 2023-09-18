@@ -7,26 +7,30 @@ namespace MainMenu
     public class MenuController : MonoBehaviour
     {
         [SerializeField] private Button playButton;
-        [SerializeField] private Button quitButton;
+        [SerializeField] private Button howToPlayButtonButton;
+        [SerializeField] private Button closeHowToPlayButton;
+        [SerializeField] private GameObject howToPlayPanel;
 
         private void Start()
         {
             playButton.onClick.AddListener(Play);
-            quitButton.onClick.AddListener(Quit);
+            howToPlayButtonButton.onClick.AddListener(OpenHowToPlay);
+            closeHowToPlayButton.onClick.AddListener(CloseHowToPlay);
+        }
+
+        private void OpenHowToPlay()
+        {
+            howToPlayPanel.SetActive(true);
+        }
+
+        private void CloseHowToPlay()
+        {
+            howToPlayPanel.SetActive(false);
         }
 
         private static void Play()
         {
             SceneManager.LoadScene("LevelOne");
-        }
-
-        private static void Quit()
-        {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-                Application.Quit();
-#endif
         }
     }
 }

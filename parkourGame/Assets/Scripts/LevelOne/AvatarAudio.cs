@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AvatarAudio : MonoBehaviour
@@ -7,16 +5,16 @@ public class AvatarAudio : MonoBehaviour
 
     [SerializeField] private AudioClip bounceSound;
     [SerializeField] private AudioClip highBounceSound;
-    
+
     private AudioSource _bounceSource;
     private AudioSource _highBounceSource;
 
     private Avatar _avatar;
-    
+
     // Needed for consistent sound bouncing
     private bool _hasPlayedBounceSound = false;
     private bool _hasPlayedHighBounceSound = false;
-    private CameraFollow _cameraFollow;
+    private CameraController _camera;
     private bool _soundStart = false;
 
 
@@ -27,16 +25,16 @@ public class AvatarAudio : MonoBehaviour
         _bounceSource.clip = bounceSound;
         _bounceSource.volume = 0.5f;
 
-        
+
         _highBounceSource = gameObject.AddComponent<AudioSource>();
         _highBounceSource.clip = highBounceSound;
         _highBounceSource.volume = 0.5f;
 
 
         _avatar = FindObjectOfType<Avatar>(true);
-        
-        _cameraFollow = FindObjectOfType<CameraFollow>();
-        _cameraFollow.OnFlyOverAnimationStop += (_,_) => _soundStart = true;
+
+        _camera = FindObjectOfType<CameraController>();
+        _camera.OnFlyOverAnimationStop += (_, _) => _soundStart = true;
     }
 
     // Update is called once per frame
@@ -53,7 +51,7 @@ public class AvatarAudio : MonoBehaviour
             {
                 _hasPlayedBounceSound = false;
             }
-        
+
             if (_avatar.IsHighJumping && !_hasPlayedHighBounceSound)
             {
                 _highBounceSource.Play();
@@ -61,10 +59,10 @@ public class AvatarAudio : MonoBehaviour
             }
             else if (!_avatar.IsHighJumping)
             {
-                _hasPlayedHighBounceSound = false; 
+                _hasPlayedHighBounceSound = false;
             }
         }
-      
+
     }
-    
+
 }
