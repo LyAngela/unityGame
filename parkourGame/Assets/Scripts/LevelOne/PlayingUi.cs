@@ -6,6 +6,7 @@ public class PlayingUi : MonoBehaviour
 {
     [SerializeField] private TMP_Text pointsText;
     [SerializeField] private TMP_Text countDownText;
+    [SerializeField] private TMP_Text powerUpText;
     [SerializeField] private Button pauseButton;
 
     private GameController _gameController;
@@ -20,5 +21,6 @@ public class PlayingUi : MonoBehaviour
     {
         pointsText.text = $"Points: {_gameController.CollectedPoints}/{_gameController.TotalPoints}";
         countDownText.text = $"Count Down: {(int)_gameController.CountDown}";
+        powerUpText.text = $"Power Ups: {_gameController.CollectedPowerUps}/{_gameController.TotalPowerUps}";
     }
 }

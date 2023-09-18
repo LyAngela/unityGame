@@ -11,7 +11,9 @@ public class GameController : MonoBehaviour
     private GameStatus _status;
 
     public int CollectedPoints { private set; get; }
+    public int CollectedPowerUps { private set; get; }
     public int TotalPoints { private set; get; }
+    public int TotalPowerUps { private set; get; }
     public float CountDown { private set; get; }
 
     private void Start()
@@ -20,7 +22,10 @@ public class GameController : MonoBehaviour
         _camera.OnFlyOverAnimationStop += (_, _) => UpdateStatus(GameStatus.Playing);
         
         Point[] pointsList = FindObjectsOfType<Point>();
+        PowerUp[] powerUpsList = FindObjectsOfType<PowerUp>();
+        
         TotalPoints = pointsList.Length;
+        TotalPowerUps = powerUpsList.Length;
         
         CountDown = AvailableTime;
 
@@ -79,5 +84,6 @@ public class GameController : MonoBehaviour
     public void PowerUp()
     {
         CountDown += 20;
+        CollectedPowerUps++;
     }
 }

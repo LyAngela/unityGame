@@ -50,27 +50,23 @@ public class Avatar : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("Floor") || other.collider.CompareTag("Building")) {
+        if (other.collider.CompareTag("Floor")) {
             _bounciness.bounceCombine = PhysicMaterialCombine.Maximum;
             IsHighJumping = false;
             OnFloor = true;
             _toJump = true;
 
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Point"))
+        } else if (other.collider.CompareTag("Building"))
         {
-            _resetBounce = true;
+            IsHighJumping = true;
+            OnFloor = true;
         }
     }
 
     private void FixedUpdate()
     {
         
-        if (IsHighJumping || _resetBounce)
+        if (IsHighJumping)
         {
             _bounciness.bounceCombine = PhysicMaterialCombine.Average;
         }
