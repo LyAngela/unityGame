@@ -15,8 +15,6 @@ public class Avatar : MonoBehaviour
 
     public bool IsHighJumping { get; set; }
     public bool OnFloor { get; set; }
-    
-    private bool _resetBounce = false;
 
     private void Start()
     {

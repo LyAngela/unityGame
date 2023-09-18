@@ -5,7 +5,7 @@ public class GameController : MonoBehaviour
 {
     public EventHandler<GameStatus> GameStatusChanged;
 
-    public const float AvailableTime = 200;
+    public const float AvailableTime = 220;
 
     private CameraFollow _camera;
     private GameStatus _status;
@@ -41,7 +41,8 @@ public class GameController : MonoBehaviour
             if (CountDown > 0)
             {
                 CountDown -= Time.deltaTime;
-                RenderSettings.fogDensity = Mathf.Lerp(0f, 0.05f, 1 - (CountDown / 150f));
+                // Fog settings
+                RenderSettings.fogDensity = Mathf.Lerp(0f, 0.04f, 1 - (CountDown / AvailableTime));
             }
             else
             {
@@ -83,7 +84,7 @@ public class GameController : MonoBehaviour
 
     public void PowerUp()
     {
-        CountDown += 20;
+        CountDown += 30;
         CollectedPowerUps++;
     }
 }
