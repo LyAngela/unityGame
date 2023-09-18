@@ -79,6 +79,11 @@ public class Avatar : MonoBehaviour
             OnFloor = false;
         }
 
+        if (transform.position.y < -5)
+        {
+            _gameController.KillPlayer();
+        }
+
         // Calculate movement vector
         Vector3 movement = new Vector3(_direction.x, 0, _direction.y) * _speed * Time.fixedDeltaTime;
 
