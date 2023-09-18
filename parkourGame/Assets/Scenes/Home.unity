@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -160}
-  m_SizeDelta: {x: 400, y: 60}
+  m_AnchoredPosition: {x: 0, y: -487}
+  m_SizeDelta: {x: 800, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139590257
 MonoBehaviour:
@@ -376,8 +376,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 65
+  m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -462,7 +462,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 500, y: 348.79}
+  m_SizeDelta: {x: 1000, y: 348.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &535784985
 MonoBehaviour:
@@ -498,14 +498,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b><size=24>How to play</size></b>\n\nDas Slime sammelt in der Wald- und
-    Stadtlandschaft Diamanten. Dabei muss es Hindernisse \xFCberwinden. Hindernisse
-    sind Stacheltier und Lavapf\xFCtzen. Das Slime soll dem Stacheltier ausweichen
-    und die Lavapf\xFCtzen \xFCberspringen, falls nicht ist das Spiel verloren.\r\n\r\nDas
-    Slime bewegt sich h\xFCpfend fort und Hindernisse k\xF6nnen mit einem Sprung
-    \xFCberwunden werden. Das Slime springt mit dem Dr\xFCcken der Leertaste. Die
-    H\xF6he des Sprungs kann erh\xF6ht werden indem die Leertaste erneut gedr\xFCckt
-    wird. Zur Fortbewegung werden die Pfeiltasten oder die Tasten w,a,s,d verwendet."
+  m_text: "<b><size=60>How to play</size></b>\n\nBibi sammelt in der Stadtlandschaft
+    Diamanten. Dabei muss es Hindernisse \xFCberwinden. Hindernisse sind Stacheltier
+    und Lavapf\xFCtzen. Bibi soll dem Stacheltier ausweichen und die Lavapf\xFCtzen
+    \xFCberspringen, falls nicht ist das Spiel verloren. Zus\xE4tzlich muss Bibi
+    alle Diamanten sammeln bevor die Zeit abl\xE4uft. \\n\nDie Herzenelemente als
+    sogenannten Power- ups geben Extra-Zeit. \\n  \nBibi bewegt sich h\xFCpfend fort
+    und Hindernisse k\xF6nnen mit einem Sprung \xFCberwunden werden. Bibi springt
+    mit dem Dr\xFCcken der <b>Leertaste</b>. Zur Fortbewegung werden die <b>Pfeiltasten</b>
+    oder die Tasten <b>w,a,s,d</b> verwendet. \t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -532,8 +533,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -696,7 +697,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1015392594
 MonoBehaviour:
@@ -958,18 +959,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1523164717}
     m_Modifications:
-    - target: {fileID: 1149616221291929699, guid: a1a0dc2ef48c5474cb06e1e1cd59297c, type: 3}
-      propertyPath: m_fontSize
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149616221291929699, guid: a1a0dc2ef48c5474cb06e1e1cd59297c, type: 3}
-      propertyPath: m_fontStyle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149616221291929699, guid: a1a0dc2ef48c5474cb06e1e1cd59297c, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 36
-      objectReference: {fileID: 0}
     - target: {fileID: 4017841562139216586, guid: a1a0dc2ef48c5474cb06e1e1cd59297c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -996,11 +985,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4017841562139216586, guid: a1a0dc2ef48c5474cb06e1e1cd59297c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 4017841562139216586, guid: a1a0dc2ef48c5474cb06e1e1cd59297c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 60
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4017841562139216586, guid: a1a0dc2ef48c5474cb06e1e1cd59297c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1036,7 +1025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4017841562139216586, guid: a1a0dc2ef48c5474cb06e1e1cd59297c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -80
+      value: -338
       objectReference: {fileID: 0}
     - target: {fileID: 4017841562139216586, guid: a1a0dc2ef48c5474cb06e1e1cd59297c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1148,8 +1137,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1229,6 +1218,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1632920433}
+  - {fileID: 1557492499}
   - {fileID: 2027294118}
   - {fileID: 1309924597}
   - {fileID: 139590256}
@@ -1278,6 +1268,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523164716}
   m_CullTransparentMesh: 1
+--- !u!1 &1557492498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1557492499}
+  - component: {fileID: 1557492501}
+  - component: {fileID: 1557492500}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1557492499
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557492498}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1523164717}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 44}
+  m_SizeDelta: {x: 250, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1557492500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557492498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 5d3db13f7086f4f1fa0d63e4106ae95f, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1557492501
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557492498}
+  m_CullTransparentMesh: 1
 --- !u!1 &1632920432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,8 +1374,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 600, y: 50}
+  m_AnchoredPosition: {x: 0, y: 265}
+  m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632920434
 MonoBehaviour:
@@ -1335,7 +1397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Slime''s Parkour '
+  m_text: 'Bibi''s Parkour '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1362,8 +1424,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 120
+  m_fontSizeBase: 120
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1588,8 +1650,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 65
+  m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1674,8 +1736,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 60}
+  m_AnchoredPosition: {x: 0, y: -183}
+  m_SizeDelta: {x: 800, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027294119
 MonoBehaviour:
