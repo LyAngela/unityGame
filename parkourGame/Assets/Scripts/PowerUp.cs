@@ -9,13 +9,9 @@ public class PowerUp : MonoBehaviour
     [SerializeField] private AudioClip powerUpSound;
 
     private AudioSource _powerUpSource;
+    
+    public event EventHandler PowerUpEvent;
 
-    private GameStatus _gameStatus;
-
-    private void Start()
-    {
-        _gameStatus = FindObjectOfType<GameStatus>();
-    }
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player"))
@@ -25,8 +21,8 @@ public class PowerUp : MonoBehaviour
             _powerUpSource.clip = powerUpSound;
             _powerUpSource.volume = 0.5f;
             _powerUpSource.Play();
-
-            _gameStatus.CountDown += 20; 
+            
+            PowerUpEvent?.Invoke(this, EventArgs.Empty);
             
             Destroy(this.gameObject);
             

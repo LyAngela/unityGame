@@ -13,12 +13,11 @@ public class Avatar : MonoBehaviour
     private PhysicMaterial _bounciness;
     public bool IsHighJumping { get; set; }
 
+    private bool _resetBounce = false;
+
     public bool OnFloor { get; set; }
     
     
-
-    
-
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -34,7 +33,12 @@ public class Avatar : MonoBehaviour
     
     private void OnJump()
     {
-        _toJump = true;
+        if (_toJump)
+        {
+            _rigidbody.AddForce(Vector3.up * 10f, ForceMode.Impulse);
+            IsHighJumping = true;
+            _toJump = false;
+        }
     }
     private void OnCollisionEnter(Collision other) {
         
@@ -42,24 +46,23 @@ public class Avatar : MonoBehaviour
             _bounciness.bounceCombine = PhysicMaterialCombine.Maximum;
             IsHighJumping = false;
             OnFloor = true;
-            
+            _toJump = true;
+
         }
-        
+
+        if (other.collider.CompareTag("Point"))
+        {
+            _resetBounce = true;
+        }
+
     }
     
     
     
     private void FixedUpdate()
     {
-        // only allowed to jump when hits floor (no double jumps)
-        if (_toJump && OnFloor)
-        {
-            _rigidbody.AddForce(Vector3.up * 10f, ForceMode.Impulse);
-            IsHighJumping = true;
-            _toJump = false;
-        }
-
-        if (IsHighJumping)
+        
+        if (IsHighJumping || _resetBounce)
         {
             _bounciness.bounceCombine = PhysicMaterialCombine.Average;
         }
@@ -69,16 +72,14 @@ public class Avatar : MonoBehaviour
             OnFloor = false;
         }
         
-     
- 
         // Calculate movement vector
-        Vector3 movement = new Vector3(_direction.x, 0, _direction.y) * _speed * Time.fixedDeltaTime;
+        Vector3 movement = new Vector3(_direction.x, 0, _direction.y) * (_speed * Time.fixedDeltaTime);
 
         // Move the avatar
         transform.Translate(movement);
         
         // Rotate the avatar
-        float rotationAmount = _direction.x * _rotationSpeed * Time.fixedDeltaTime;
+        var rotationAmount = _direction.x * _rotationSpeed * Time.fixedDeltaTime;
         transform.Rotate(Vector3.up, rotationAmount);
       
     }

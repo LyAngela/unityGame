@@ -16,7 +16,7 @@ public class AvatarAudio : MonoBehaviour
     // Needed for consistent sound bouncing
     private bool _hasPlayedBounceSound = false;
     private bool _hasPlayedHighBounceSound = false;
-    private Camera _camera;
+    private CameraFollow _cameraFollow;
     private bool _soundStart = false;
 
 
@@ -35,8 +35,8 @@ public class AvatarAudio : MonoBehaviour
 
         _avatar = FindObjectOfType<Avatar>(true);
         
-        _camera = FindObjectOfType<Camera>();
-        _camera.OnFlyOverAnimationStop += (_,_) => _soundStart = true;
+        _cameraFollow = FindObjectOfType<CameraFollow>();
+        _cameraFollow.OnFlyOverAnimationStop += (_,_) => _soundStart = true;
     }
 
     // Update is called once per frame

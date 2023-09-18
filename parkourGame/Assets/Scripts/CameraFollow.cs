@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
 
-public class Camera : MonoBehaviour
+public class CameraFollow : MonoBehaviour
 {
     private Vector3 velocity = Vector3.zero;
     private Avatar _avatar;

@@ -6,41 +6,69 @@ using UnityEngine;
 public class GameStatus : MonoBehaviour
 {
     private int _points = 0;
+    private int _powerUps = 0;
+    
     private int _missingPoints;
+    private int _missingPowerUps;
+    
     private GUIStyle _style = new GUIStyle();
     public float CountDown { get; set; }
+    private bool _countDownStart = false;
+    
+   // Fly Over at beginning of Game
+    private CameraFollow _cameraFollow;
 
-    private bool countDownStart = false;
-    private Camera _camera;
+    // TODO 
+    public event EventHandler GameWonEvent;
     void Start()
     {
+        CountDown = 200;
+        
         useGUILayout = true;
         _style.fontSize = 20;
         
         Point[] pointsList = GetComponentsInChildren<Point>();
+        PowerUp[] powerUps = FindObjectsOfType<PowerUp>();
+        
         _missingPoints = pointsList.Length;
+        _missingPowerUps = powerUps.Length;
         
         foreach (var point in pointsList)
         {
-            point.PointEvent += (_, _) =>
+            point.PointEvent += (_, _) => _points++;
+        }
+        
+        
+
+        foreach (var power in powerUps)
+        {
+            power.PowerUpEvent += (_, _) =>
             {
-                _points++;
+                _powerUps++;
+                CountDown += 30;
             };
 
-            CountDown = 150;
         }
-
-        _camera = FindObjectOfType<Camera>();
-        _camera.OnFlyOverAnimationStop += (_,_) => countDownStart = true;
         
+        
+
+        _cameraFollow = FindObjectOfType<CameraFollow>();
+        _cameraFollow.OnFlyOverAnimationStop += (_,_) => _countDownStart = true;
+        
+    }
+
+    public void OnPuase()
+    {
+        // TODO
     }
 
     private void Update()
     {
-        if (countDownStart)
+        if (_countDownStart)
         {
             CountDown = CountDown > 0 ? CountDown - Time.deltaTime : 0; 
-            RenderSettings.fogDensity = CountDown == 0 ? 0.05f : Mathf.Lerp(0f, 0.05f, 1 - (CountDown / 150f)); 
+            // More fog depending how much time has passed
+            RenderSettings.fogDensity = CountDown == 0 ? 0.03f : Mathf.Lerp(0f, 0.03f, 1 - (CountDown / 200)); 
         }
         
     }
@@ -49,7 +77,8 @@ public class GameStatus : MonoBehaviour
     {
         GUILayout.BeginArea(new Rect(0,20, 300,300));
         GUILayout.Label($"Points: {_points}/{_missingPoints} ", _style);
-        GUILayout.Label($"Count Down: {(int)CountDown}",_style);
+        GUILayout.Label($"Count Down: {(int)CountDown} seconds",_style);
+        GUILayout.Label($"Collected Power Ups: {_powerUps}/{_missingPowerUps}",_style);
         GUILayout.EndArea();
     }
     
