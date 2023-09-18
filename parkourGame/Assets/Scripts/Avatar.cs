@@ -42,7 +42,7 @@ public class Avatar : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other) {
         
-        if (other.collider.CompareTag("Floor")) {
+        if (other.collider.CompareTag("Floor") || other.collider.CompareTag("Building")) {
             _bounciness.bounceCombine = PhysicMaterialCombine.Maximum;
             IsHighJumping = false;
             OnFloor = true;
