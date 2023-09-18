@@ -502,11 +502,12 @@ MonoBehaviour:
     Diamanten. Dabei muss es Hindernisse \xFCberwinden. Hindernisse sind Stacheltier
     und Lavapf\xFCtzen. Bibi soll dem Stacheltier ausweichen und die Lavapf\xFCtzen
     \xFCberspringen, falls nicht ist das Spiel verloren. Zus\xE4tzlich muss Bibi
-    alle Diamanten sammeln bevor die Zeit abl\xE4uft. \\n\nDie Herzenelemente als
-    sogenannten Power- ups geben Extra-Zeit. \\n  \nBibi bewegt sich h\xFCpfend fort
-    und Hindernisse k\xF6nnen mit einem Sprung \xFCberwunden werden. Bibi springt
-    mit dem Dr\xFCcken der <b>Leertaste</b>. Zur Fortbewegung werden die <b>Pfeiltasten</b>
-    oder die Tasten <b>w,a,s,d</b> verwendet. \t"
+    alle Diamanten sammeln bevor die Zeit abl\xE4uft. Der Nebel verst\xE4rkt sich,
+    desto l\xE4nger gespielt wird.  \\n\nDie Herzenelemente als sogenannten Power-
+    ups geben Extra-Zeit. \\n  \nBibi bewegt sich h\xFCpfend fort und Hindernisse
+    k\xF6nnen mit einem Sprung \xFCberwunden werden. Bibi springt mit dem Dr\xFCcken
+    der <b>Leertaste</b>. Zur Fortbewegung werden die <b>Pfeiltasten</b> oder die
+    Tasten <b>w,a,s,d</b> verwendet. \t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
